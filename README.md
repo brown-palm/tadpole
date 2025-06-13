@@ -91,9 +91,10 @@ python src/train_dmc.py \
 If you find this repository helpful, please consider citing our work:
 ```bibtex
 @inproceedings{luo2024text,
-  title={Text-Aware Diffusion for Policy Learning},
   author={Luo, Calvin and He, Mandy and Zeng, Zilai and Sun, Chen},
   booktitle={Advances in Neural Information Processing Systems},
+  title={Text-Aware Diffusion for Policy Learning},
+  volume={37},
   year={2024}
 }
 ```

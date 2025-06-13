@@ -112,8 +112,10 @@ class VideoTADPoLe(nn.Module):
         self.precision_t = torch.float16 if fp16 else torch.float32
 
         adapter = MotionAdapter.from_pretrained("guoyww/animatediff-motion-adapter-v1-5-2", torch_dtype=self.precision_t)
-        # load SD 1.5 based finetuned model
-        model_key = "sd-legacy/stable-diffusion-v1-5"
+        # load SD model
+        model_key = "CompVis/stable-diffusion-v1-4"
+        # another choice: load SD 1.5 based finetuned model
+        # model_key = "sd-legacy/stable-diffusion-v1-5"
         pipe = AnimateDiffPipeline.from_pretrained(model_key, motion_adapter=adapter, torch_dtype=self.precision_t)
         pipe.scheduler = DDIMScheduler.from_pretrained(
             model_key,
